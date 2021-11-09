@@ -1,8 +1,9 @@
 import { Injectable, Inject } from '@nestjs/common';
 import { MAILGUN_CONFIGURATION } from '../../tokens/tokens';
-import * as mailgunConfig from 'mailgun-js';
+import Mailgun from 'mailgun.js';
 import { ConfigurationMailgun } from '../../../nestjs-mailgun/configuration';
 import { MailgunEmailModel } from '../../../nestjs-mailgun/classes/mailgun-email-model';
+import formData from 'form-data';
 
 export interface EmailOptions {
   from: string;
@@ -21,11 +22,13 @@ export class MailgunService {
     @Inject(MAILGUN_CONFIGURATION)
     private readonly configuration: ConfigurationMailgun,
   ) {
-    this.mailgun = mailgunConfig({
-      apiKey: configuration.API_KEY,
-      domain: configuration.DOMAIN,
-      publicApiKey: configuration.PUBLIC_API_KEY,
-      host: configuration.HOST,
+    const mg = new Mailgun(formData);
+    this.mailgun = mg.client({
+      username: 'api',
+      key: process.env.MAILGUN_API_KEY,
+      public_key: configuration.PUBLIC_API_KEY,
+      // domain: configuration.DOMAIN,
+      url: configuration.HOST,
     });
   }
 

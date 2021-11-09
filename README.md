@@ -7,9 +7,9 @@
 </div>
 
 <h3 align="center">NestJS Mailgun</h3>
-<a href="https://www.npmjs.com/package/@nextnm/nestjs-mailgun"><img src="https://img.shields.io/npm/v/@nextnm/nestjs-mailgun.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/@nextnm/nestjs-mailgun"><img src="https://img.shields.io/npm/l/@nextnm/nestjs-mailgun.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/@nextnm/nestjs-mailgun"><img src="https://img.shields.io/npm/dm/@nextnm/nestjs-mailgun.svg" alt="NPM Downloads" /></a>
+<a href="https://www.npmjs.com/package/@kkarimi/nestjs-mailgun"><img src="https://img.shields.io/npm/v/@kkarimi/nestjs-mailgun.svg" alt="NPM Version" /></a>
+<a href="https://www.npmjs.com/@kkarimi/nestjs-mailgun"><img src="https://img.shields.io/npm/l/@kkarimi/nestjs-mailgun.svg" alt="Package License" /></a>
+<a href="https://www.npmjs.com/@kkarimi/nestjs-mailgun"><img src="https://img.shields.io/npm/dm/@kkarimi/nestjs-mailgun.svg" alt="NPM Downloads" /></a>
 
 <div align="center">
   <a href="https://nestjs.com" target="_blank">
@@ -25,7 +25,7 @@ It only supports sending and verifying emails, but later more will be added. Jus
 ### Installation
 
 ```bash
-npm install @nextnm/nestjs-mailgun
+npm install @kkarimi/nestjs-mailgun
 ```
 
 ### Usage
@@ -33,7 +33,7 @@ npm install @nextnm/nestjs-mailgun
 #### Importing module
 
 ```typescript
-import { MailgunModule } from '@nextnm/nestjs-mailgun';
+import { MailgunModule } from '@kkarimi/nestjs-mailgun';
 @Module({
   imports: [
     MailgunModule.forRoot({
@@ -51,7 +51,7 @@ export class YourModule {}
 #### Importing module Async
 
 ```typescript
-import { MailgunModule } from '@nextnm/nestjs-mailgun';
+import { MailgunModule } from '@kkarimi/nestjs-mailgun';
 @Module({
   imports: [
     MailgunModule.forAsyncRoot({
@@ -88,8 +88,8 @@ interface EmailOptions {
 #### Calling Send Method
 
 ```typescript
-import { MailgunService } from '@nextnm/nestjs-mailgun';
-import { EmailOptions } from '@nextnm/nestjs-mailgun'
+import { MailgunService } from '@kkarimi/nestjs-mailgun';
+import { EmailOptions } from '@kkarimi/nestjs-mailgun'
 
 @Injectable()
 export class YourService {
@@ -120,8 +120,8 @@ export class YourService {
 To check if an email is real or not.
 
 ```typescript
-import { MailgunService } from '@nextnm/nestjs-mailgun';
-import { EmailOptions } from '@nextnm/nestjs-mailgun'
+import { MailgunService } from '@kkarimi/nestjs-mailgun';
+import { EmailOptions } from '@kkarimi/nestjs-mailgun'
 
 @Injectable()
 export class YourService {

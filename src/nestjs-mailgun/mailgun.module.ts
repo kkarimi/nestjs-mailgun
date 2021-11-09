@@ -11,9 +11,6 @@ export class MailgunModule {
   public static forRoot(config: ConfigurationMailgun) {
     return {
       module: MailgunModule,
-      //   controllers: [
-      //     ...controllers,
-      //   ],
       providers: [
         { provide: MAILGUN_CONFIGURATION, useValue: config },
         MailgunService,
@@ -24,9 +21,6 @@ export class MailgunModule {
   public static forAsyncRoot(config: ConfigurationMailgunAsync) {
     return {
       module: MailgunModule,
-      //   controllers: [
-      //     ...controllers,
-      //   ],
       imports: config.imports || [],
       providers: [this.createAsyncProviders(config), MailgunService],
       exports: [MailgunService],
